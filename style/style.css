@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+:root{
+    --cyan: hsl(185, 41%, 84%);
+    --light-white: hsl(0, 0%, 100%);
+    --dark-cyan: hsl(183, 100%, 15%);
+}
+
+
+body{
+    font-family: 'Space Mono', monospace;
+    background-color: var(--cyan);
+}
+
+.title-a, .title-b{
+    letter-spacing: 2px;
+    font-size:25px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--dark-cyan);
+}
+
+.main-app {
+    background-color:var(--light-white);
+    border-top: 1px solid white;
+    border-radius: 18px;
+    font-size:20px;
+    font-weight: 700;
+    width: 100%;
+}
+
+
+/* MAIN APP WITH INTERACTIVE CONTROLS */
+
+#bill-input{
+    background-color: var(--cyan);
+}
+
+
+.col-one,.col-two,.col-four,.col-five{
+    background-color: var( --dark-cyan);
+    color:var(--light-white);
+    line-height: 1.7;
+}
+
+.col-three{
+    background-color:hsl(172, 67%, 45%);
+}
+
+.col-three:hover{
+    background-color:hsl(183, 84%, 43%);
+    color:white;
+}
+
+button:hover{
+    background-color:var(--cyan);
+    color:var( --dark-cyan);
+    font-weight:900;
+}
+
+.tip-display-container{
+    background-color:var( --dark-cyan);
+    border-radius: 8px;
+}
+
+.tip-amount{
+    font-size: 11px;
+}
+
+.person{
+    font-size: 10px;
+}
+
+.amount{
+    color: hsl(172, 67%, 45%);
+}
+
+@media screen and (max-width:480px) {
+    .label{
+        font-size:13px;
+    }
+
+    button,input{
+        font-size:14px;
+        font-weight:500;
+    }
+
+    .main-app{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+    }
+
+    .vr{
+        display:none;
+    }
+    .amount,.amount-naira{
+        color: hsl(172, 67%, 45%);
+        font-size: 24px;
+    }
+}
+
+
+@media screen and (min-width:600px) {
+    .main{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+    .app{
+        width:60%;
+    }
+    .label{
+        font-size:15px;
+    }
+    button,input{
+        font-size:16px;
+        font-weight:500;
+    }
+
+    .input-board,.tip-display {
+        width: 50%;
+    }
+
+    .vr{
+        display: block;
+    }
+
+    .amount,.amount-naira{
+        color: hsl(172, 67%, 45%);
+        font-size: 30px;
+    }
+
+  
+}
