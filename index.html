@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tip calculator app</title>
+    <title>Tip calculator</title>
     <link rel="stylesheet" href="./style/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,106 +32,127 @@
                     <div class="label bill-label mb-1">
                         <label for="bill-input">Bill</label>
                     </div>
-                    <div class="bill-input-container input-group">
+                    <div class="bill-input-container input-group" id="bill-input-container">
                         <span class="input-group-text">#</span>
                         <input type="number" class="form-control text-end fw-bolder" id="bill-input">
                     </div>
 
-
                   <!-- STYLING TIP PERCENT CONTAINER USING GRID COL AND ROWS -->
                     <div class="tip-container mt-3">
 
-                      <div class="label perc-label mb-1">
-                            Select tip %
-                      </div>
-
-                      <div class="percent-container">
-                            <div class="row row-cols-2 row-cols-sm-3 gx-3 gy-3">
-
-                                <div class="col">
-                                    <div class="col">
-                                        <button class="w-100 py-2 rounded-3 text-center col-one text-white-75">5%</button>
-                                    </div>
-                                </div>
-                            
-                                <div class="col">
-                                    <div class="col">
-                                        <button class="w-100 py-2 rounded-3 text-center col-two">10%</button>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="col">
-                                        <button class="w-100 py-2 rounded-3 text-center col-three">15%</button>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="col">
-                                        <button class="w-100 py-2 rounded-3 text-center col-four">25%</button>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="col">
-                                        <button class="w-100 py-2 rounded-3  text-center col-five">50%</button>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="col">
-                                        <input class="border w-100 text-center py-2 rounded-3 fw-bolder" type="text" name="" id="" placeholder="custom">
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-
-                        <div class="people mt-4">
-                            <div class="label people-label mb-1">
+                        <div class="people mt-2 mb-3">
+                            <div class="label people-label mb-1 d-flex justify-content-between align-content-center">
                                 <label for="people-input">Number of people</label>
+                                <div class="info" id="check-numb-people"></div>
                             </div>
                             <div class="people-input-container input-group">
                                 <span class="input-group-text">
                                     <img src="people.png" alt="">
                                 </span>
-                                <input type="number" class="form-control text-end fw-bolder" id="people-input">
+                                <input type="number" class="form-control text-end fw-bolder" id="number-of-people">
                             </div>
                         </div>
+
+                      <div class="label perc-label mt-4">
+                            Select tip %
+                      </div>
+
+                      <div class="percent-container mt-3">
+                            <div class="row row-cols-2 row-cols-sm-3 gx-3 gy-3">
+
+                                <div class="col">
+                                    <div class="col">
+                                        <button class="w-100 py-2 rounded-3 text-center col-one text-white-75" id="five-percent">5%</button>
+                                    </div>
+                                </div>
+                            
+                                <div class="col">
+                                    <div class="col">
+                                        <button class="w-100 py-2 rounded-3 text-center col-two"id="ten-percent">10%</button>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col">
+                                        <button class="w-100 py-2 rounded-3 text-center col-three" id="fifteen-percent">15%</button>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col">
+                                        <button class="w-100 py-2 rounded-3 text-center col-four" id="twenty-five-percent">25%</button>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col">
+                                        <button class="w-100 py-2 rounded-3  text-center col-five" id="fifty-percent">50%</button>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col">
+                                        <input class="border w-100 text-center py-2 rounded-3 fw-bolder" type="text" name="" id="custom-percent" placeholder="custom">
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+
+                        
                     </div>
                 </div>
-
 
                 <!-- VERTICAL RULER -->
                 <div class="vr"></div>
 
-
                 <!-- SECOND SECTION -->
 
-                <div class="tip-display py-3 px-4">
+                <div class="tip-display px-4 ">
                     <div class="tip-display-container py-3 d-flex flex-column justify-content-center align-content-center">
 
+                        <div class="total-bill d-flex justify-content-between align-content-center px-3">
+                            <div class="final-bill text-white">
+                                Total Bill <br>
+                                <span class="person text-white-50">calculated</span>
+                            </div>
+                            <div class="amount-naira text-white-50">
+                                #<span class="amount" id="final-bill">0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="total-tip d-flex justify-content-between align-content-center px-3">
+                            <div class="tip-bill text-white">
+                                Total Tip <br>
+                                <span class="person text-white-50">calculated</span>
+                            </div>
+                            <div class="amount-naira text-white-50">
+                                #<span class="amount" id="final-tip">0.00</span>
+                            </div>
+                        </div>
+
                         <div class="tip-amount-per-person d-flex justify-content-between align-content-center px-3">
-                            <div class="tip-amount text-white">
+                            <div class="tip-amount-person text-white">
                                 Tip Amount <br>
                                 <span class="person text-white-50">/ person</span>
                             </div>
                             <div class="amount-naira text-white-50">
-                                #<span class="amount ">500</span>
+                                #<span class="amount" id="tip-amount-per-person">0.00</span>
                             </div>
                         </div>
 
-                        <div class="total-person mt-4 d-flex justify-content-between align-content-center px-3">
-                            <div class="tip-amount text-white">
+                        <div class="total-person d-flex justify-content-between align-content-center px-3 ">
+                            <div class="total-person-amount text-white">
                                 Total<br>
                                 <span class="person text-white-50">/ person</span>
                             </div>
                             <div class="amount-naira text-white-50">
-                                #<span class="amount">500</span>
+                                #<span class="amount" id="total-amount-per-person">0.00</span>
                             </div>
                         </div>
 
+                        <!-- RESET BUTTON TO RESET THE WHOLE APP -->
                         <div class="reset-btn d-flex flex-column justify-content-center align-content-center">
-                            <button type="button" class="btn reset mx-3">RESET</button>
+                            <button type="button" class="btn reset mx-3" id="reset">RESET</button>
                         </div>
 
                     </div>
@@ -146,7 +167,7 @@
 
     </div>
 
-    <script src="./script/bootstrap.min.js"></script>
     <script src="./script/index.js"></script>
+    <script src="./script/bootstrap.min.js"></script>
 </body>
 </html>

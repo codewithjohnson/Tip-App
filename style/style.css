@@ -9,10 +9,14 @@
     --dark-cyan: hsl(183, 100%, 15%);
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     font-family: 'Space Mono', monospace;
     background-color: var(--cyan);
+    min-height: 100vh;
 }
 
 .title-a, .title-b{
@@ -27,7 +31,7 @@ body{
     background-color:var(--light-white);
     border-top: 1px solid white;
     border-radius: 18px;
-    font-size:20px;
+    font-size:18px;
     font-weight: 700;
     width: 100%;
 }
@@ -35,7 +39,7 @@ body{
 
 /* MAIN APP WITH INTERACTIVE CONTROLS */
 
-#bill-input{
+#bill-input,#number-of-people{
     background-color: var(--cyan);
 }
 
@@ -51,7 +55,7 @@ body{
 }
 
 .reset{
-    margin-top: 25px;
+    margin-top: 50px;
     font-weight: 700;
     color: var(--dark-cyan);
     font-size:18px;
@@ -72,8 +76,25 @@ button:hover{
     background-color:var( --dark-cyan);
     border-radius: 8px;
 }
+.total-bill{
+    margin-top:15px;
+}
 
-.tip-amount{
+.tip-amount-per-person {
+   margin-top: 25px; 
+}
+
+.total-person{
+    margin-top: 25px;
+}
+
+.total-tip{
+    margin-top: 25px;
+}
+
+
+
+.tip-amount-person,.final-bill,.total-person-amount,.total-tip{
     font-size: 11px;
 }
 
@@ -106,8 +127,12 @@ button:hover{
     }
     .amount,.amount-naira{
         color: hsl(172, 67%, 45%);
-        font-size: 25px;
+        font-size: 20px;
         margin-top:-7px;
+    }
+
+    .reset{
+        margin-top:60px;
     }
 }
 
@@ -115,12 +140,11 @@ button:hover{
 @media screen and (min-width:480px) {
     .main{
         display:flex;
-        /* flex-direction:column; */
         justify-content:center;
         align-items:center;
     }
     .app{
-        width:100%;
+        width:calc(100%);
     }
     .label{
         font-size:15px;
@@ -140,21 +164,20 @@ button:hover{
 
     .amount,.amount-naira{
         color: hsl(172, 67%, 45%);
-        font-size: 25px;
+        font-size: 21px;
         margin-top:-7px;
     }
 
   
 }
-@media screen and (min-width:600px) {
+@media screen and (min-width:1000px) {
     .main{
         display:flex;
-        /* flex-direction:column; */
         justify-content:center;
         align-items:center;
     }
     .app{
-        width:50%;
+        width:calc(55%);
     }
     .label{
         font-size:15px;
@@ -174,7 +197,8 @@ button:hover{
 
     .amount,.amount-naira{
         color: hsl(172, 67%, 45%);
-        font-size: 25px;
+        font-size: 21px;
+        margin-top:-7px;
     }
 
   
